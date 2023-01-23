@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,13 @@ namespace Diretorios
 {
     class Arquivo
     {
+        private static string caminhoArquivo()
+        {
+            return ConfigurationManager.AppSettings["caminho_arquivos"];
+        }
         public static void Ler(int numeroArquivo)
         {
-            string arquivoComCaminho = @"C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\arq" + numeroArquivo + ".txt";
+            string arquivoComCaminho = caminhoArquivo() + "arq" + numeroArquivo + ".txt";
             Console.WriteLine("====== Lendo Arquivo ======\n" + arquivoComCaminho + "\n====================");
             if (File.Exists(arquivoComCaminho))
             {
@@ -24,7 +29,7 @@ namespace Diretorios
                 }
             }
 
-            string arquivosComCaminho2 = @"C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\arq" + (numeroArquivo + 1) + ".txt";
+            string arquivosComCaminho2 = caminhoArquivo() + "arq" + (numeroArquivo + 1) + ".txt";
             if (File.Exists(arquivosComCaminho2))
             {
                 Arquivo.Ler(numeroArquivo + 1);
