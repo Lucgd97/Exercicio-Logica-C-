@@ -11,7 +11,7 @@ namespace Diretorios
     {
         private static string caminhoArquivo()
         {
-            return ConfigurationManager.AppSettings["caminho_arquivos"];
+            return ConfigurationManager.AppSettings["CaminhoArquivo"];
         }
         public static void Ler(int numeroArquivo)
         {
