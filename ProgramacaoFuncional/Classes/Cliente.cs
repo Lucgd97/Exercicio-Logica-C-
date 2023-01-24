@@ -40,9 +40,9 @@ namespace Classes
                         var clienteArquivo = linha.Split(';');
 
                         var cliente = new Cliente();
-                        cliente.Nome= clienteArquivo[0];
+                        cliente.Nome = clienteArquivo[0];
                         cliente.Telefone = clienteArquivo[1];
-                        cliente.Cpf= clienteArquivo[2];
+                        cliente.Cpf = clienteArquivo[2];
 
                         clientes.Add(cliente);
                     }
