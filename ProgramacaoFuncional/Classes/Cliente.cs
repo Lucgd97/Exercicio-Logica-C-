@@ -9,6 +9,29 @@ namespace Classes
 {
     public class Cliente
     {
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
+        /// <param name="nome">`Para preencher o nome do objeto</param>
+        public Cliente(string nome)
+        {
+            this.Nome = nome;
+        }
+
+        /// <summary>
+        /// Contrutor com o parametro telefone int
+        /// </summary>
+        /// <param name="telefone">Telefone Iinteiro</param>
+        public Cliente(int telefone)
+        {
+            this.Telefone = telefone.ToString();
+        }
+
+        public Cliente()
+        {
+
+        }
+
         public string Nome;
         public string Telefone;
         public string Cpf;

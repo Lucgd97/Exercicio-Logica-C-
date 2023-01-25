@@ -7,9 +7,15 @@ using Classes;
 
 //Menu.Criar();
 
-var clientes = Cliente.LerClientes();
+var clientes = Cliente.LerClientes(); //classe
 
-//var cliente = new Cliente();
+Cliente c = new Cliente();
+
+Cliente c2= new Cliente { Nome= "Danilo", Telefone = "12123454567", Cpf="12396385202" };
+
+var l = new List<String>();
+
+//var cliente = new Cliente(); //metodo de instancia
 //cliente.Nome = "Danilo";
 //cliente.Telefone = "16456321456";
 //cliente.Cpf = "12365478958";
