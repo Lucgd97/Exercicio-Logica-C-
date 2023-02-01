@@ -10,12 +10,16 @@ namespace Classes
     public class Cliente
     {
         /// <summary>
-        /// Construtor da classe
+        /// Construtor com 3 parametros
         /// </summary>
-        /// <param name="nome">`Para preencher o nome do objeto</param>
-        public Cliente(string nome)
+        /// <param name="nome"></param>
+        /// <param name="telefone"></param>
+        /// <param name="cpf"></param>
+        public Cliente(string nome, string telefone, string cpf)
         {
             this.Nome = nome;
+            this.Telefone = telefone;
+            this.Cpf = cpf;
         }
 
         /// <summary>
@@ -38,7 +42,18 @@ namespace Classes
 
         public void Gravar()
         {
-            //todo
+            var clientes = Cliente.LerClientes();
+            clientes.Add(this);
+            if (File.Exists(caminhoBaseClientes()))
+            {
+                string conteudo = "nome;telefone;cpf;\n";
+                foreach (Cliente c in clientes)
+                {
+                    conteudo += c.Nome + ";" + c.Telefone + ";" + c.Cpf + ";\n";
+                }
+
+                File.WriteAllText(caminhoBaseClientes(), conteudo);
+            }
         }
 
         private static string caminhoBaseClientes()
@@ -62,11 +77,9 @@ namespace Classes
                         if (i == 1) continue;
                         var clienteArquivo = linha.Split(';');
 
-                        var cliente = new Cliente();
-                        cliente.Nome = clienteArquivo[0];
-                        cliente.Telefone = clienteArquivo[1];
-                        cliente.Cpf = clienteArquivo[2];
-
+                        var cliente = new Cliente(clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]);
+                        //var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], Cpf = clienteArquivo[2] }; mesmo codigo mas construtor diferente
+                        
                         clientes.Add(cliente);
                     }
                 }
