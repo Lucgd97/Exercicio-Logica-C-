@@ -14,7 +14,7 @@ using Classes;
 //var l = new List<String>();
 
 var cliente = new Cliente(); //metodo de instancia
-cliente.Nome = "Danilo";
+cliente.Nome = "Geraldo";
 cliente.Telefone = "16456321456";
 cliente.Cpf = "12365478958";
 cliente.Gravar();
