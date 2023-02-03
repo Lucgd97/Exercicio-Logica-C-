@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Tela
 
-{
+{    
     class Menu
     {
         public static void Criar()
@@ -18,6 +18,7 @@ namespace Tela
             int LER_ARQUIVOS = 1;
             int TABUADA = 2;
             int CALCULO_MEDIA = 3;
+            int CADASTRAR_CLIENTES = 4;
 
 
             while (true)
@@ -28,7 +29,8 @@ namespace Tela
                     "\n  0 - Sair do programa" +
                     "\n  1 - Para ler arquivos" +
                     "\n  2 - Para executar tabuada" +
-                    "\n  3 - Calcular média de alunos";
+                    "\n  3 - Calcular média de alunos" +
+                    "\n  4 - Cadastrar Clientes";
                 Console.WriteLine(mensagem);
 
                 int valor = int.Parse(Console.ReadLine());
@@ -55,6 +57,12 @@ namespace Tela
                 {
                     Console.WriteLine("====== Media de Notas ======");
                     Media.Aluno();
+                    Console.WriteLine("\n========================\n");
+                }
+                else if (valor == CADASTRAR_CLIENTES)
+                {
+                    Console.WriteLine("====== Cadastrar Cliente ======");
+                    TelaCliente.Chamar();
                     Console.WriteLine("\n========================\n");
                 }
                 else

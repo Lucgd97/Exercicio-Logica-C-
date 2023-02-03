@@ -57,6 +57,8 @@ namespace Classes
             }    
         }
 
+
+
         private static string caminhoBaseClientes()
         {
             return ConfigurationManager.AppSettings["BaseDeClientes"];
