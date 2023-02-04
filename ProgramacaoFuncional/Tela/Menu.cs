@@ -61,7 +61,6 @@ namespace Tela
                 }
                 else if (valor == CADASTRAR_CLIENTES)
                 {
-                    Console.WriteLine("====== Cadastrar Cliente ======");
                     TelaCliente.Chamar();
                     Console.WriteLine("\n========================\n");
                 }

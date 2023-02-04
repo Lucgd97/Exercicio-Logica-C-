@@ -9,38 +9,52 @@ namespace Funcoes
 {
     class TelaCliente
     {
-        public void Chamar()
+        public static void Chamar()
         {
-            Cliente c = new Cliente();
+            Console.WriteLine("=========== Cadastrar Cliente ===========");
 
-            Cliente c2 = new Cliente { nome = "danilo", telefone = "12123454567", cpf = "12396385202" };
-
-            var l = new list<string>();
-
-            var Cliente = new Cliente(); //metodo de instancia
-            Cliente.nome = "geraldo";
-            Cliente.telefone = "16456321456";
-            Cliente.cpf = "12365478958";
-            Cliente.gravar();
-
-            var cliente2 = new cliente();
-            cliente2.nome = "lucas";
-            cliente2.telefone = "16987456541";
-            cliente2.cpf = "15998774125";
-            cliente2.gravar();
-
-            var clientes = cliente.lerclientes(); //classe
-
-            foreach (cliente c in clientes)
+            while (true)
             {
-                console.writeline(c.nome);
-                console.writeline(c.telefone);
-                console.writeline(c.cpf);
+                string mensagem = "Digite uma das opções abaixo:" +
+                    "\n     0 - Sair do cadastro" +
+                    "\n     1 - Para cadastrar Clientes" +
+                    "\n     2 - Para listar clientes";
 
-                console.writeline("==================");
+                Console.WriteLine(mensagem);
+
+                int valor = int.Parse(Console.ReadLine());
+
+                if (valor == 0)
+                {
+                    break;
+                }
+                else if (valor == 1)
+                {
+                    var cliente = new Cliente(); //metodo de instancia
+
+                    Console.WriteLine("Digite o nome do cliente");
+                    cliente.Nome = Console.ReadLine();
+
+                    Console.WriteLine("Digite o telefone:");
+                    cliente.Telefone = Console.ReadLine();
+
+                    Console.WriteLine("Digite o Cpf:");
+                    cliente.Cpf = Console.ReadLine();
+
+                    cliente.Gravar();
+                }
+                else
+                {
+                    var clientes = Cliente.LerClientes(); //classe
+                    foreach (Cliente c in clientes)
+                    {
+                        Console.WriteLine(c.Nome);
+                        Console.WriteLine(c.Telefone);
+                        Console.WriteLine(c.Cpf);
+                        Console.WriteLine("==================");
+                    }
+                }
             }
-
-            console.readline();
         }
     }
 }
