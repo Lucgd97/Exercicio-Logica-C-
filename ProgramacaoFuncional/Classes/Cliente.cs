@@ -40,15 +40,14 @@ namespace Classes
         public string Telefone;
         public string Cpf;
 
-        public void Gravar()
+        //sealed n deixa sobrescrever
+        public virtual void Gravar() //virtual deixa sobrescrever o metodo em outras classes
         {
-            if(this.GetType() == typeof(Cliente))
-            {
-                var clientes = Cliente.LerClientes();
+             var clientes = Cliente.LerClientes();
                 clientes.Add(this);
-                if (File.Exists(caminhoBaseClientes()))
+                if (File.Exists(caminhoBase()))
                 {
-                    StreamWriter r = new StreamWriter(caminhoBaseClientes());
+                    StreamWriter r = new StreamWriter(caminhoBase());
                     r.WriteLine("nome;telefone;cpf;");
                     foreach (Cliente c in clientes)
                     {
@@ -56,46 +55,21 @@ namespace Classes
                         r.WriteLine(linha);
                     }
                     r.Close();
-                }
-            }
-            else
-            {
-                var usuario = Usuario.LerUsuarios();
-                Usuario u = new Usuario(this.Nome, this.Telefone, this.Cpf);
-                usuario.Add(u);
-                if (File.Exists(caminhoBaseUsuarios()))
-                {
-                    StreamWriter r = new StreamWriter(caminhoBaseUsuarios());
-                    r.WriteLine("nome;telefone;cpf;");
-                    foreach (Usuario c in usuario)
-                    {
-                        var linha = c.Nome + ";" + c.Telefone + ";" + c.Cpf + ";";
-                        r.WriteLine(linha);
-                    }
-                    r.Close();
-                }
-            }
+                }                                  
         }
 
-
-
-        private static string caminhoBaseClientes()
+        private static string caminhoBase()
         {
             return ConfigurationManager.AppSettings["BaseDeClientes"];
         }
-
-        private static string caminhoBaseUsuarios()
-        {
-            return ConfigurationManager.AppSettings["BaseDeUsuarios"];
-        }
-
+                
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();
 
-            if (File.Exists(caminhoBaseClientes()))
+            if (File.Exists(caminhoBase()))
             {
-                using (StreamReader arquivo = File.OpenText(caminhoBaseClientes()))
+                using (StreamReader arquivo = File.OpenText(caminhoBase()))
                 {
                     string linha;
                     int i = 0;
@@ -114,31 +88,6 @@ namespace Classes
             }
             return clientes;
         }
-
-        public static List<Usuario> LerUsuarios()
-        {
-            var usuarios = new List<Usuario>();
-
-            if (File.Exists(caminhoBaseUsuarios()))
-            {
-                using (StreamReader arquivo = File.OpenText(caminhoBaseUsuarios()))
-                {
-                    string linha;
-                    int i = 0;
-                    while ((linha = arquivo.ReadLine()) != null)
-                    {
-                        i++;
-                        if (i == 1) continue;
-                        var usuarioArquivo = linha.Split(';');
-
-                        var usuario = new Usuario(usuarioArquivo[0], usuarioArquivo[1], usuarioArquivo[2]);
-                        
-                        usuarios.Add(usuario);
-                    }
-                }
-            }
-            return usuarios;
-        }
-
+                
     }
 }
