@@ -40,6 +40,11 @@ namespace Classes
         public string Telefone;
         public string Cpf;
 
+        private static string caminhoBase()
+        {
+            return ConfigurationManager.AppSettings["BaseDeClientes"];
+        }
+
         //sealed n deixa sobrescrever
         public virtual void Gravar() //virtual deixa sobrescrever o metodo em outras classes
         {
@@ -57,12 +62,7 @@ namespace Classes
                     r.Close();
                 }                                  
         }
-
-        private static string caminhoBase()
-        {
-            return ConfigurationManager.AppSettings["BaseDeClientes"];
-        }
-                
+                               
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();
