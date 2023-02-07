@@ -39,6 +39,7 @@ namespace Classes
         public string Nome;
         public string Telefone;
         public string Cpf;
+        private string Sobrenome = "Santos";
 
         private static string caminhoBase()
         {
@@ -62,7 +63,11 @@ namespace Classes
                     r.Close();
                 }                                  
         }
-                               
+            
+        public virtual void Olhar()
+        {
+            Console.WriteLine("O cliente " + this.Nome + " " + this.Sobrenome + " está olhando para mim!");
+        }
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();

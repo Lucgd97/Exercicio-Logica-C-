@@ -26,8 +26,7 @@ namespace Classes
         public override void Gravar() //override esta sobre escrevendo o codigo de cliente
         {           
                 var usuario = Usuario.LerUsuarios();
-                Usuario u = new Usuario(this.Nome, this.Telefone, this.Cpf);
-                usuario.Add(u);
+                usuario.Add(this);
                 if (File.Exists(caminhoBase()))
                 {
                     StreamWriter r = new StreamWriter(caminhoBase());
@@ -39,6 +38,12 @@ namespace Classes
                     }
                     r.Close();
                 }            
+        }
+
+        public override void Olhar()
+        {
+            Console.WriteLine("O usuario " + this.Nome + " não rwm sobrenome, pois é atributo privado de cliente(Classe Pai)");
+            base.Olhar();
         }
 
         public static List<Usuario> LerUsuarios()
