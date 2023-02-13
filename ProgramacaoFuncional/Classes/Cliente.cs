@@ -39,7 +39,22 @@ namespace Classes
         public string Nome;
         public string Telefone;
         public string Cpf;
+
         private string Sobrenome = "Santos";
+
+        protected int CalcularUmMaisDois()
+        {
+            return 1 + 2;
+        }
+        private int CalcularUmMaisDois2()
+        {
+            return 1 + 2;
+        }
+
+        public int CalcularUmMaisDois3()
+        {
+            return 1 + 2;
+        }
 
         private static string caminhoBase()
         {
