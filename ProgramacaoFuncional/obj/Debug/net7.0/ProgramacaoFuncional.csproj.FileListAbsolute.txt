@@ -28,3 +28,5 @@ C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\P
 C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\ProgramacaoFuncional\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\ProgramacaoFuncional\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\ProgramacaoFuncional\obj\Debug\net7.0\ProgramacaoFuncional.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\ProgramacaoFuncional\bin\Debug\net7.0\Componentes.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Alura\C# Danilo\ProgramacaoFuncional\ProgramacaoFuncional\bin\Debug\net7.0\Componentes.pdb

@@ -158,6 +158,16 @@
             "rid": "win"
           }
         }
+      },
+      "Componentes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Componentes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Componentes.dll": {}
+        }
       }
     }
   },
@@ -376,10 +386,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Componentes/1.0.0": {
+      "type": "project",
+      "path": "../Componentes/Componentes.csproj",
+      "msbuildProject": "../Componentes/Componentes.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Componentes >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 7.0.0"
     ]
   },
@@ -417,7 +433,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Alura\\C# Danilo\\ProgramacaoFuncional\\Componentes\\Componentes.csproj": {
+              "projectPath": "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\Alura\\C# Danilo\\ProgramacaoFuncional\\Componentes\\Componentes.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

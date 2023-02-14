@@ -4,6 +4,7 @@ using Calculo;
 using Funcoes;
 using Tela;
 using Classes;
+using Componentes;
 
 //Menu.Criar();
 
@@ -22,15 +23,17 @@ foreach (Cliente cl in Cliente.LerClientes())
     Console.WriteLine(cl.Cpf);
 }*/
 
-Cliente c = new Cliente();
-c.CalcularUmMaisDois3();
+Ferramentas f = new Ferramentas();
+f.ValidarCpf("sddsd");
 
+/*
+Cliente c = new Cliente();
 Console.WriteLine("========== Cadastro de Usuario ==========");
 Usuario u = new Usuario();
 u.Nome = "Usuario";
 u.Telefone = "11123455236";
 u.Cpf = "12365478985";
-u.Gravar();
+u.Gravar();*/
 /*
 foreach (Usuario us in Usuario.LerUsuarios())
 {
