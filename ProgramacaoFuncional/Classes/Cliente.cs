@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Cliente
+    public class Cliente : Base
     {
         /// <summary>
         /// Construtor com 3 parametros
@@ -34,11 +34,7 @@ namespace Classes
         public Cliente()
         {
 
-        }
-
-        public string Nome;
-        public string Telefone;
-        public string Cpf;
+        }        
 
         private string Sobrenome = "Santos";
 
@@ -64,25 +60,7 @@ namespace Classes
         private static string caminhoBase()
         {
             return ConfigurationManager.AppSettings["BaseDeClientes"];
-        }
-
-        //sealed n deixa sobrescrever
-        public virtual void Gravar() //virtual deixa sobrescrever o metodo em outras classes
-        {
-             var clientes = Cliente.LerClientes();
-                clientes.Add(this);
-                if (File.Exists(caminhoBase()))
-                {
-                    StreamWriter r = new StreamWriter(caminhoBase());
-                    r.WriteLine("nome;telefone;cpf;");
-                    foreach (Cliente c in clientes)
-                    {
-                        var linha = c.Nome + ";" + c.Telefone + ";" + c.Cpf + ";";
-                        r.WriteLine(linha);
-                    }
-                    r.Close();
-                }                                  
-        }
+        }                
             
         public virtual void Olhar()
         {

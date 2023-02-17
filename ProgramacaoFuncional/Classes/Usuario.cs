@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Usuario : Cliente
+    public class Usuario : Base
     {
         public Usuario(string nome, string telefone, string cpf)
         {
