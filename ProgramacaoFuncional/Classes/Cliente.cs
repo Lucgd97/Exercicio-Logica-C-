@@ -34,38 +34,22 @@ namespace Classes
         public Cliente()
         {
 
-        }        
-
-        private string Sobrenome = "Santos";
-
-        protected int CalcularUmMaisDois() //cliente e herenca
-        {
-            return 1 + 2;
-        }
-        private int CalcularUmMaisDois2() //somente clientes
-        {
-            return 1 + 2;
-        }
-
-        public int CalcularUmMaisDois3() // tds
-        {
-            return 1 + 2;
-        }
-
-        internal int CalcularUmMaisDois4() //instancia,herenca,interno da classe,mas n em outro projeto
-        {
-            return 1 + 2;
-        }
+        }                  
 
         private static string caminhoBase()
         {
             return ConfigurationManager.AppSettings["BaseDeClientes"];
-        }                
-            
+        }
+
+
         public virtual void Olhar()
         {
-            Console.WriteLine("O cliente " + this.Nome + " " + this.Sobrenome + " está olhando para mim!");
+            int resultado = this.CalcularUmMaisDois();
+
+            Console.WriteLine("O usuario " + this.Nome + " não rwm sobrenome, pois é atributo privado de cliente(Classe Pai)");
+            base.Olhar();
         }
+
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();

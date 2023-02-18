@@ -39,14 +39,7 @@ namespace Classes
                     r.Close();
                 }            
         }
-
-        public override void Olhar()
-        {
-            int resultado = this.CalcularUmMaisDois();
-
-            Console.WriteLine("O usuario " + this.Nome + " não rwm sobrenome, pois é atributo privado de cliente(Classe Pai)");
-            base.Olhar();
-        }
+                
 
         public static List<Usuario> LerUsuarios()
         {
