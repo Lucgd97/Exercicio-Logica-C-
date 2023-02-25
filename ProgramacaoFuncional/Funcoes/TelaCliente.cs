@@ -45,7 +45,7 @@ namespace Funcoes
                 }
                 else
                 {
-                    var clientes = Cliente.LerClientes(); //classe
+                    var clientes = new Cliente().Ler(); //classe
                     foreach (Cliente c in clientes)
                     {
                         Console.WriteLine(c.Nome);

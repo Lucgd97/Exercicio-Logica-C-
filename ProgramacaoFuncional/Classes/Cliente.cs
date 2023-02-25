@@ -31,50 +31,8 @@ namespace Classes
             this.Telefone = telefone.ToString();
         }
 
-        public Cliente()
-        {
-
-        }                  
-
-        private static string caminhoBase()
-        {
-            return ConfigurationManager.AppSettings["BaseDeClientes"];
-        }
-
-
-        public virtual void Olhar()
-        {
-            int resultado = this.CalcularUmMaisDois();
-
-            Console.WriteLine("O usuario " + this.Nome + " não rwm sobrenome, pois é atributo privado de cliente(Classe Pai)");
-            base.Olhar();
-        }
-
-        public static List<Cliente> LerClientes()
-        {
-            var clientes = new List<Cliente>();
-
-            if (File.Exists(caminhoBase()))
-            {
-                using (StreamReader arquivo = File.OpenText(caminhoBase()))
-                {
-                    string linha;
-                    int i = 0;
-                    while ((linha = arquivo.ReadLine()) != null) 
-                    {
-                        i++;
-                        if (i == 1) continue;
-                        var clienteArquivo = linha.Split(';');
-
-                        var cliente = new Cliente(clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]);
-                        //var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], Cpf = clienteArquivo[2] }; mesmo codigo mas construtor diferente
-                        
-                        clientes.Add(cliente);
-                    }
-                }
-            }
-            return clientes;
-        }
-                
+        public Cliente() { }
+        
+        public static string Teste;
     }
 }

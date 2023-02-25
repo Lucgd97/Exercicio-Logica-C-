@@ -17,10 +17,7 @@ namespace Classes
             this.Cpf = cpf;
         }
 
-        public  Base()
-        {
-
-        }
+        public  Base() { }
 
         public string Nome;
         public string Telefone;
