@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public interface Pessoa
+    public interface IPessoa
     {
+        void SetNome(string nome);
+        void SetTelefone(string telefone);
+        void SetCpf(string cpf);
         void Gravar();
     }
 }

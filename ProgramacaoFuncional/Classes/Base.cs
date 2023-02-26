@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Base : Pessoa
+    public class Base : IPessoa
     {
         public Base(string nome, string telefone, string cpf)
         {
@@ -22,29 +22,34 @@ namespace Classes
         public string Nome;
         public string Telefone;
         public string Cpf;
+
+        public void SetNome(string nome) { this.Nome = nome; }
+        public void SetTelefone(string telefone) { this.Telefone = telefone; }
+        public void SetCpf(string cpf) { this.Cpf = cpf; }
+
         private string Sobrenome = "Santos";
+
 
         //sealed n deixa sobrescrever
         public virtual void Gravar() //virtual deixa sobrescrever o metodo em outras classes
         {
-            var dados = new Base().Ler();
+            var dados = this.Ler();
             dados.Add(this);
-            if (File.Exists(diretorioComArquivo()))
+            
+            StreamWriter r = new StreamWriter(diretorioComArquivo());
+            r.WriteLine("nome;telefone;cpf;");
+            foreach (Base b in dados)
             {
-                StreamWriter r = new StreamWriter(diretorioComArquivo());
-                r.WriteLine("nome;telefone;cpf;");
-                foreach (Base b in dados)
-                {
-                    var linha = b.Nome + ";" + b.Telefone + ";" + b.Cpf + ";";
-                    r.WriteLine(linha);
-                }
-                r.Close();
+                var linha = b.Nome + ";" + b.Telefone + ";" + b.Cpf + ";";
+                r.WriteLine(linha);
             }
+            r.Close();
+            
         }
 
-        public List<Base> Ler()
+        public List<IPessoa> Ler()
         {
-            var dados = new List<Base>();
+            var dados = new List<IPessoa>();
 
             if (File.Exists(diretorioComArquivo()))
             {
@@ -58,10 +63,16 @@ namespace Classes
                         if (i == 1) continue;
                         var baseArquivo = linha.Split(';');
 
-                        var cliente = new Base(baseArquivo[0], baseArquivo[1], baseArquivo[2]);
+                        var b = (IPessoa)Activator.CreateInstance(this.GetType());
+                        // utilizando Interface
+                        b.SetNome(baseArquivo[0]);
+                        b.SetTelefone(baseArquivo[1]);
+                        b.SetCpf(baseArquivo[2]);
+
+                        //var b = new Base(baseArquivo[0], baseArquivo[1], baseArquivo[2]); antigo
                         //var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], Cpf = clienteArquivo[2] }; mesmo codigo mas construtor diferente
 
-                        dados.Add(cliente);
+                        dados.Add(b);
                     }
                 }
             }
