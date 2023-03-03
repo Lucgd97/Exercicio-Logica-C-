@@ -6,8 +6,21 @@ using Tela;
 using Classes;
 using Componentes;
 
-//Menu.Criar();
+public abstract class Animal
+{
+    public string Coleira;
+    public string Pelo;
+    public string Olhos;
 
+    public abstract void Latir();
+
+    public string Correr()
+    {
+        return "animal está correndo";
+    }
+}
+
+//Menu.Criar();
 
 Console.WriteLine("========== Cadastro de Cliente ==========");
 Cliente c = new Cliente();
