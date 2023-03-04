@@ -6,19 +6,9 @@ using Tela;
 using Classes;
 using Componentes;
 
-public abstract class Animal
-{
-    public string Coleira;
-    public string Pelo;
-    public string Olhos;
 
-    public abstract void Latir();
-
-    public string Correr()
-    {
-        return "animal está correndo";
-    }
-}
+var cachorro = new Cachorro();
+cachorro.Latir();
 
 //Menu.Criar();
 
