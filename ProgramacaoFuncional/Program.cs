@@ -7,6 +7,15 @@ using Classes;
 using Componentes;
 
 
+var c = new Cachorro();
+c.Idade = 1; // set
+Console.WriteLine(c.Idade); // get
+
+c.Idade2 = 1;
+Console.WriteLine(c.Idade2);
+
+
+/*
 var cachorro = new Cachorro();
 cachorro.Latir();
 
