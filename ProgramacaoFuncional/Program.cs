@@ -6,13 +6,46 @@ using Tela;
 using Classes;
 using Componentes;
 
+/*
+ * Aula Perminssoes e agrupamentos
+class Animal // sealed - restringe n pode fazer heranca 
+{
+    public string teste;
+    public virtual string teste2() //sealed test // virtual faz tirar o new e warning mas obriga o override
+    {
+        return "";
+    }
+}
+class Macaco : Animal
+{
+    public override string teste2() //new - para tirar warning do cod // overrride pq agr é virtual
+    {
+        return "sss";
+    }
+}*/
+/*
+ * aula permissoes e agrupamento
+partial class Animal // partial permite classes com mesmo nomes e faz merge uma com outra e eles se complementam // n pode ter 2 classes no mesmo namespace
+{
+    public string teste; // atributo
+    partial void tt(); // metodo partial - tem q ser private 
+}
+partial class Animal
+{
+    public string teste2;
+    partial void tt()
+    {
+        Console.WriteLine("teste");
+    }
+}*/
 
+/*
 var c = new Cachorro();
 c.Idade = 1; // set
 Console.WriteLine(c.Idade); // get
 
 c.Idade2 = 1;
-Console.WriteLine(c.Idade2);
+Console.WriteLine(c.Idade2);*/
 
 
 /*
