@@ -6,6 +6,16 @@ using Tela;
 using Classes;
 using Componentes;
 
+
+// Classes singleton
+
+Email.Instancia.Corpo = "bla bla bla";
+Email.Instancia.Titulo = "Titulo do email";
+Email.Instancia.Origin = "lucas@teste.com.br";
+Email.Instancia.Destino = "lucas123@destino.com.br";
+
+Email.Instancia.EnviarEmail();
+
 /*
  * Aula Perminssoes e agrupamentos
 class Animal // sealed - restringe n pode fazer heranca 
