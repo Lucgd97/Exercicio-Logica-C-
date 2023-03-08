@@ -24,7 +24,7 @@ namespace Tela
             while (true)
             {
                 string mensagem = "Olá usário, bem vindo ao programa\n" +
-                    "\n ==== Programação funcional ====" +
+                    "\n ==== Aplicação Console Final ====" +
                     "\n  Digite uma das opções abaixo:" +
                     "\n  0 - Sair do programa" +
                     "\n  1 - Para ler arquivos" +

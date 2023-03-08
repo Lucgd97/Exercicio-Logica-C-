@@ -48,9 +48,10 @@ namespace Funcoes
                     var clientes = new Cliente().Ler(); //classe
                     foreach (Cliente c in clientes)
                     {
-                        Console.WriteLine(c.Nome);
-                        Console.WriteLine(c.Telefone);
-                        Console.WriteLine(c.Cpf);
+                        Console.WriteLine("==================");
+                        Console.WriteLine("Nome: " + c.Nome);
+                        Console.WriteLine("Telefone: " + c.Telefone);
+                        Console.WriteLine("Cpf: " + c.Cpf);
                         Console.WriteLine("==================");
                     }
                 }
