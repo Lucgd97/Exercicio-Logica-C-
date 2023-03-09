@@ -19,6 +19,8 @@ namespace Tela
             int TABUADA = 2;
             int CALCULO_MEDIA = 3;
             int CADASTRAR_CLIENTES = 4;
+            int CADASTRAR_USUARIO = 5; 
+            int CADASTRAR_FORNECEDOR = 6; 
 
 
             while (true)
@@ -30,7 +32,9 @@ namespace Tela
                     "\n  1 - Para ler arquivos" +
                     "\n  2 - Para executar tabuada" +
                     "\n  3 - Calcular média de alunos" +
-                    "\n  4 - Cadastrar Clientes";
+                    "\n  4 - Cadastrar Clientes" +
+                    "\n  5 - Cadastrar Usuario" +
+                    "\n  6 - Cadastrar Fornecedor";
                 Console.WriteLine(mensagem);
 
                 int valor = int.Parse(Console.ReadLine());
@@ -62,6 +66,16 @@ namespace Tela
                 else if (valor == CADASTRAR_CLIENTES)
                 {
                     TelaCliente.Chamar();
+                    Console.WriteLine("\n========================\n");
+                }
+                else if (valor == CADASTRAR_USUARIO)
+                {
+                    TelaUsuario.Chamar();
+                    Console.WriteLine("\n========================\n");
+                }
+                else if (valor == CADASTRAR_FORNECEDOR)
+                {
+                    TelaFornecedor.Chamar();
                     Console.WriteLine("\n========================\n");
                 }
                 else

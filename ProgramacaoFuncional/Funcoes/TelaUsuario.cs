@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Funcoes
 {
-    class TelaCliente
+    class TelaUsuario
     {
         public static void Chamar()
         {
-            Console.WriteLine("=========== Cadastrar Cliente ===========");
+            Console.WriteLine("=========== Cadastrar Usuario ===========");
 
             while (true)
             {
                 string mensagem = "Digite uma das opções abaixo:" +
                     "\n     0 - Sair do cadastro" +
-                    "\n     1 - Para cadastrar Clientes" +
-                    "\n     2 - Para listar clientes";
+                    "\n     1 - Para cadastrar usuario" +
+                    "\n     2 - Para listar usuario";
 
                 Console.WriteLine(mensagem);
 
@@ -30,28 +30,28 @@ namespace Funcoes
                 }
                 else if (valor == 1)
                 {
-                    var cliente = new Cliente(); //metodo de instancia
+                    var usuario = new Usuario(); //metodo de instancia
 
-                    Console.WriteLine("Digite o nome do cliente");
-                    cliente.Nome = Console.ReadLine();
+                    Console.WriteLine("Digite o nome do usuario");
+                    usuario.Nome = Console.ReadLine();
 
                     Console.WriteLine("Digite o telefone:");
-                    cliente.Telefone = Console.ReadLine();
+                    usuario.Telefone = Console.ReadLine();
 
                     Console.WriteLine("Digite o Cpf:");
-                    cliente.Cpf = Console.ReadLine();
+                    usuario.Cpf = Console.ReadLine();
 
-                    cliente.Gravar();
+                    usuario.Gravar();
                 }
                 else
                 {
-                    var clientes = new Cliente().Ler(); //classe
-                    foreach (Cliente c in clientes)
+                    var usuarios = new Usuario().Ler(); //classe
+                    foreach (Usuario u in usuarios)
                     {
                         Console.WriteLine("=========================");
-                        Console.WriteLine("Nome: " + c.Nome);
-                        Console.WriteLine("Telefone: " + c.Telefone);
-                        Console.WriteLine("Cpf: " + c.Cpf);
+                        Console.WriteLine("Nome: " + u.Nome);
+                        Console.WriteLine("Telefone: " + u.Telefone);
+                        Console.WriteLine("Cpf: " + u.Cpf);
                         Console.WriteLine("=========================");
                     }
                 }

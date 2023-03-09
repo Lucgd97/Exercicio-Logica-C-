@@ -1,0 +1,2 @@
+nome;telefone;cpf;
+lucas;16987455896;12369885212;
