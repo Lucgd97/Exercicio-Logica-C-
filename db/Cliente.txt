@@ -1,3 +1,6 @@
 nome;telefone;cpf;
 Danilo;16123456541;12365478952;
 Lucas;16981038514;09092440906;
+Gustavo Seiji Yoshioka;11964686436;40980906865;
+Lais Gilio Ducci;11;586666666;
+Marco Yoiti Yoshioka;2015032105;230153021;

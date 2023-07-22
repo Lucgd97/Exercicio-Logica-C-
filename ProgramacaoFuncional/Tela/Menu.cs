@@ -12,7 +12,7 @@ namespace Tela
 {    
     class Menu
     {
-        public static void Criar()
+        public static void Crar()
         {
             int SAIDA_PROGRAMA = 0;
             int LER_ARQUIVOS = 1;
